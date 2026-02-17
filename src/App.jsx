@@ -6,76 +6,128 @@ import AnimatedSection from "./components/AnimatedSection";
 import PortalSection from "./components/PortalSection";
 
 const LINKS = {
-  privateOffice: "https://www.orchestraprivateoffice.nl",
-  charityOffice: "https://www.orchestracharityoffice.nl",
-  myOrchestra: "https://mijn.orchestrabeheer.nl",
+  privateOffice: "https://ofis-website-private.vercel.app/",
+  charityOffice: "https://ofis-website.vercel.app/",
+  myOrchestra: "https://ofis.orchestrabeheer.nl/Ofis/Client",
 };
+
+/* Abstract fluid art for each card — navy & gold palette */
+function ArtPrivate() {
+  return (
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" fill="none">
+      <defs>
+        <linearGradient id="gp1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#5A80A5" />
+          <stop offset="50%" stopColor="#7897B5" />
+          <stop offset="100%" stopColor="#9FB5CB" />
+        </linearGradient>
+        <radialGradient id="gp2" cx="30%" cy="60%" r="50%">
+          <stop offset="0%" stopColor="#D6BA59" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#D6BA59" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="gp3" cx="80%" cy="30%" r="40%">
+          <stop offset="0%" stopColor="#9FB5CB" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#9FB5CB" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="400" height="220" fill="url(#gp1)" />
+      <ellipse cx="120" cy="140" rx="140" ry="100" fill="url(#gp2)" />
+      <ellipse cx="320" cy="60" rx="120" ry="90" fill="url(#gp3)" />
+      <circle cx="80" cy="80" r="60" fill="#C09E35" fillOpacity="0.08" />
+      <path d="M0 180 Q100 120, 200 160 T400 130 L400 220 L0 220Z" fill="white" fillOpacity="0.06" />
+      <path d="M0 200 Q150 150, 300 190 T400 170 L400 220 L0 220Z" fill="white" fillOpacity="0.04" />
+    </svg>
+  );
+}
+
+function ArtCharity() {
+  return (
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" fill="none">
+      <defs>
+        <linearGradient id="gc1" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#7897B5" />
+          <stop offset="50%" stopColor="#5A80A5" />
+          <stop offset="100%" stopColor="#9FB5CB" />
+        </linearGradient>
+        <radialGradient id="gc2" cx="70%" cy="50%" r="45%">
+          <stop offset="0%" stopColor="#DEC777" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#DEC777" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="gc3" cx="20%" cy="40%" r="45%">
+          <stop offset="0%" stopColor="#7897B5" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#7897B5" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="400" height="220" fill="url(#gc1)" />
+      <ellipse cx="280" cy="110" rx="130" ry="95" fill="url(#gc2)" />
+      <ellipse cx="80" cy="90" rx="110" ry="80" fill="url(#gc3)" />
+      <circle cx="320" cy="60" r="50" fill="#AA8C2B" fillOpacity="0.1" />
+      <circle cx="200" cy="180" r="70" fill="#C5D3E0" fillOpacity="0.08" />
+      <path d="M400 160 Q300 100, 200 150 T0 120 L0 220 L400 220Z" fill="white" fillOpacity="0.06" />
+      <path d="M400 190 Q250 140, 100 180 T0 160 L0 220 L400 220Z" fill="white" fillOpacity="0.04" />
+    </svg>
+  );
+}
+
+function ArtPortal() {
+  return (
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" fill="none">
+      <defs>
+        <linearGradient id="gm1" x1="50%" y1="0%" x2="50%" y2="100%">
+          <stop offset="0%" stopColor="#9FB5CB" />
+          <stop offset="50%" stopColor="#5A80A5" />
+          <stop offset="100%" stopColor="#7897B5" />
+        </linearGradient>
+        <radialGradient id="gm2" cx="50%" cy="40%" r="50%">
+          <stop offset="0%" stopColor="#CFAD3B" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#CFAD3B" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="gm3" cx="80%" cy="70%" r="40%">
+          <stop offset="0%" stopColor="#5A80A5" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#5A80A5" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="400" height="220" fill="url(#gm1)" />
+      <ellipse cx="200" cy="90" rx="150" ry="100" fill="url(#gm2)" />
+      <ellipse cx="320" cy="160" rx="100" ry="80" fill="url(#gm3)" />
+      <circle cx="100" cy="160" r="55" fill="#E8D89E" fillOpacity="0.08" />
+      <circle cx="340" cy="50" r="40" fill="#C5D3E0" fillOpacity="0.1" />
+      <path d="M0 150 Q200 90, 400 140 L400 220 L0 220Z" fill="white" fillOpacity="0.06" />
+      <path d="M0 180 Q200 130, 400 175 L400 220 L0 220Z" fill="white" fillOpacity="0.04" />
+    </svg>
+  );
+}
 
 export default function App() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen flex flex-col bg-white relative overflow-hidden">
-      {/* Background gradient accents */}
+    <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ backgroundColor: "#f8f9fb" }}>
+      {/* Dot grid pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, #c8ccd0 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      {/* Radial vignette */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, #f8f9fb 80%)",
+        }}
+      />
+
+      {/* Soft color washes */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-150 bg-gold-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-100 h-100 bg-navy-100/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-100 h-100 bg-navy-100/20 rounded-full blur-3xl" />
-      </div>
-
-      {/* Decorative background SVGs — z-20 so they render over header/footer */}
-      <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden" aria-hidden="true">
-        {/* Top-left arc */}
-        <svg className="absolute -top-20 -left-20 w-80 h-80 text-warm-gray-400/15" viewBox="0 0 320 320" fill="none">
-          <circle cx="160" cy="160" r="120" stroke="currentColor" strokeWidth="1" />
-          <circle cx="160" cy="160" r="155" stroke="currentColor" strokeWidth="0.75" strokeDasharray="4 6" />
-        </svg>
-
-        {/* Bottom-right arc */}
-        <svg className="absolute -bottom-24 -right-24 w-96 h-96 text-warm-gray-400/15" viewBox="0 0 384 384" fill="none">
-          <circle cx="192" cy="192" r="140" stroke="currentColor" strokeWidth="1" />
-          <circle cx="192" cy="192" r="185" stroke="currentColor" strokeWidth="0.75" strokeDasharray="4 6" />
-        </svg>
-
-        {/* Center-right small circles */}
-        <svg className="absolute top-1/3 -right-8 w-48 h-48 text-warm-gray-300/25" viewBox="0 0 192 192" fill="none">
-          <circle cx="96" cy="96" r="60" stroke="currentColor" strokeWidth="1" />
-          <circle cx="96" cy="96" r="88" stroke="currentColor" strokeWidth="0.75" />
-        </svg>
-
-        {/* Top-right horizontal lines */}
-        <svg className="absolute top-12 right-1/4 w-40 h-40 text-warm-gray-400/12" viewBox="0 0 160 160" fill="none">
-          <line x1="0" y1="40" x2="160" y2="40" stroke="currentColor" strokeWidth="0.75" />
-          <line x1="0" y1="80" x2="160" y2="80" stroke="currentColor" strokeWidth="0.75" />
-          <line x1="0" y1="120" x2="160" y2="120" stroke="currentColor" strokeWidth="0.75" />
-        </svg>
-
-        {/* Bottom-left diamond */}
-        <svg className="absolute bottom-1/4 left-12 w-24 h-24 text-warm-gray-300/20" viewBox="0 0 96 96" fill="none">
-          <rect x="24" y="24" width="48" height="48" rx="2" stroke="currentColor" strokeWidth="1" transform="rotate(45 48 48)" />
-        </svg>
-
-        {/* Dot grid - top center */}
-        <svg className="absolute top-16 left-1/3 w-32 h-20 text-warm-gray-400/20" viewBox="0 0 128 80" fill="currentColor">
-          {[0, 1, 2, 3, 4].map((col) =>
-            [0, 1, 2].map((row) => (
-              <circle key={`${col}-${row}`} cx={12 + col * 26} cy={12 + row * 26} r="1.5" />
-            ))
-          )}
-        </svg>
-
-        {/* Dot grid - bottom center */}
-        <svg className="absolute bottom-20 left-1/2 -translate-x-1/2 w-32 h-20 text-warm-gray-400/15" viewBox="0 0 128 80" fill="currentColor">
-          {[0, 1, 2, 3, 4].map((col) =>
-            [0, 1, 2].map((row) => (
-              <circle key={`${col}-${row}`} cx={12 + col * 26} cy={12 + row * 26} r="1.5" />
-            ))
-          )}
-        </svg>
+        <div className="absolute top-0 right-0 w-150 h-100 bg-navy-100/25 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-125 h-100 bg-gold-200/20 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
       </div>
 
       {/* Header */}
-      <header className="relative z-10 bg-white/80 backdrop-blur-sm border-b border-navy-900/8">
+      <header className="relative z-10 backdrop-blur-sm border-b border-navy-900/6" style={{ backgroundColor: "rgba(248, 249, 251, 0.85)" }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-5 flex items-center justify-between">
           <motion.div
             className="flex items-center gap-3"
@@ -101,8 +153,9 @@ export default function App() {
                 title={t("privateOffice")}
                 description={t("privateOfficeDesc")}
                 href={LINKS.privateOffice}
-                icon={<Building2 size={24} strokeWidth={1.5} />}
+                icon={<Building2 size={20} strokeWidth={1.5} />}
                 cta={t("visitSite")}
+                art={<ArtPrivate />}
               />
             </AnimatedSection>
 
@@ -111,8 +164,9 @@ export default function App() {
                 title={t("charityOffice")}
                 description={t("charityOfficeDesc")}
                 href={LINKS.charityOffice}
-                icon={<HeartHandshake size={24} strokeWidth={1.5} />}
+                icon={<HeartHandshake size={20} strokeWidth={1.5} />}
                 cta={t("visitSite")}
+                art={<ArtCharity />}
               />
             </AnimatedSection>
 
@@ -121,8 +175,9 @@ export default function App() {
                 title={t("myOrchestra")}
                 description={t("myOrchestraDesc")}
                 href={LINKS.myOrchestra}
-                icon={<UserCircle size={24} strokeWidth={1.5} />}
+                icon={<UserCircle size={20} strokeWidth={1.5} />}
                 cta={t("openPortal")}
+                art={<ArtPortal />}
               />
             </AnimatedSection>
           </div>
@@ -130,7 +185,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 bg-white/80 backdrop-blur-sm border-t border-navy-900/8 py-6">
+      <footer className="relative z-10 backdrop-blur-sm border-t border-navy-900/6 py-6" style={{ backgroundColor: "rgba(248, 249, 251, 0.85)" }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 text-center text-xs text-warm-gray-400 tracking-wide">
           <p>{t("copyright")}</p>
         </div>
