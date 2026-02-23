@@ -43,9 +43,7 @@ export default function App() {
             transition={{ duration: 0.5 }}
           >
             <div className="w-8 h-0.5 bg-gold-600" />
-            <span className="text-navy-900 text-base font-heading tracking-wider uppercase">
-              {t("title")}
-            </span>
+            <img src="/images/Orchestra-Logo.png" alt="Orchestra" className="h-7" />
           </motion.div>
           <LanguageToggle />
         </div>
