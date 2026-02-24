@@ -15,12 +15,16 @@ export default function App() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ backgroundColor: "#f8f9fb" }}>
+    <div
+      className="min-h-screen flex flex-col relative overflow-hidden"
+      style={{ backgroundColor: "#f8f9fb" }}
+    >
       {/* Dot grid pattern */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle, #c8ccd0 1px, transparent 1px)",
+          backgroundImage:
+            "radial-gradient(circle, #c8ccd0 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />
@@ -29,12 +33,16 @@ export default function App() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, #f8f9fb 80%)",
+          background:
+            "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, #f8f9fb 80%)",
         }}
       />
 
       {/* Header */}
-      <header className="relative z-10 backdrop-blur-sm border-b border-navy-900/6" style={{ backgroundColor: "rgba(248, 249, 251, 0.85)" }}>
+      <header
+        className="relative z-10 backdrop-blur-sm border-b border-navy-900/6"
+        style={{ backgroundColor: "rgba(248, 249, 251, 0.85)" }}
+      >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-5 flex items-center justify-between">
           <motion.div
             className="flex items-center gap-3"
@@ -43,7 +51,11 @@ export default function App() {
             transition={{ duration: 0.5 }}
           >
             <div className="w-8 h-0.5 bg-gold-600" />
-            <img src="/images/Orchestra-Logo.png" alt="Orchestra" className="h-7" />
+            <img
+              src="/images/Orchestra-Logo.png"
+              alt="Orchestra"
+              className="h-6"
+            />
           </motion.div>
           <LanguageToggle />
         </div>
@@ -100,7 +112,10 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 backdrop-blur-sm border-t border-navy-900/6 py-6" style={{ backgroundColor: "rgba(248, 249, 251, 0.85)" }}>
+      <footer
+        className="relative z-10 backdrop-blur-sm border-t border-navy-900/6 py-6"
+        style={{ backgroundColor: "rgba(248, 249, 251, 0.85)" }}
+      >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 text-center text-xs text-warm-gray-400 tracking-wide">
           <p>{t("copyright")}</p>
         </div>
