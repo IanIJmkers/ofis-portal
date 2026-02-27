@@ -6,8 +6,8 @@ import AnimatedSection from "./components/AnimatedSection";
 import PortalSection from "./components/PortalSection";
 
 const LINKS = {
-  privateOffice: "https://ofis-website-private.vercel.app/",
-  charityOffice: "https://ofis-website.vercel.app/",
+  privateOffice: "https://www.orchestra-privateoffice.com/",
+  charityOffice: "https://www.orchestra-charityoffice.com/",
   myOrchestra: "https://ofis.orchestrabeheer.nl/Ofis/Client",
 };
 
